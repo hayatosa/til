@@ -1,0 +1,19 @@
+・bundle install をする階層は、homeでもdesktopでもダメ。処理を行いたいディレクトリで行わないとエラーが起こる。
+・shift command 5 でスクリーンショット
+・routes.rb で
+# /usersのurlにアクセスすると、usersコントローラのindexアクションに処理を渡す
+
+ルートの設定ルーティング
+ get '/users', to: 'users#index›←to後の:忘れない！！
+
+・rails g controller users ← 必ず複数形のルール！
+・appの中のusers_controller内でindexアクションを定義する
+def index
+end
+・viewsのusersに新規保存で名前をつける
+・index.html.erb
+erbはrubyのコードを打ち込むことのできるhtmlファイルであることを表す
+
+・rails g controller users でコントローラを作成することは現場ではまずない。いらないファイルができまくるから
+・appのcontroller上でファイル作成。users.controller.rbで作成し、classも自分で書く。
+・ApplicationControllerからUsersControllerへ継承を忘れないこと
