@@ -1,1 +1,71 @@
 ### git基礎について学びの記録
+githubにプッシュしたいアプリができたら
+
+### Gitのやり方
+git init
+git add .   インデックスにファイルを登録する。インデックスとは保存する対象を保存するための場所。
+git status インデックスに登録されているかチェックするコマンド。緑なら登録済み。
+git commit -m ”add hogehoge” 変更内容を保存
+git log 過去の変更履歴をチェック
+git branch 今どこのブランチにいるか確認
+git chekout ブランチ名　ブランチの切り替え
+変更加えたら
+git add .
+git commit -m”変更内容”
+
+■何か変更あれば都度git add .
+一時保存みたいな感じ。それをしないままgit status しても赤文字エラーが出るから注意。
+んでgit add . したらgit commit -m ”変更内容”
+git add .とgit commitはセットだな
+
+■現在のcommitから一つ前のcommitに戻したいときは
+git checkout HEAD^
+^の数でどのくらい前に戻るか決める
+
+■過去のcommitに戻した後、やはり元の状態（master）に戻したい場合
+git checkout master
+
+■新しくbranchを作りたい場合
+git checkout -b ブランチ名（add_hogehoge）
+
+■ブランチでの変更内容をmasterに反映させる＝マージ
+まずmasterにブランチを切り替える
+git chekout master
+masterにブランチをマージさせる
+git merge ブランチ名
+
+### Githubの使い方　
+リモートリポジトリにプッシュ
+Githubにログインし、new file作成する
+URLをコピーしたら、ターミナルへ戻る
+git remote add origin URL 関連付けを行う
+
+git remoteで確認してみるとoriginができているので、originにURLが関連づけられたということ
+んでoriginに対してプッシュを行うと、関連づけられたGithub(リモートリポジトリ)にプッシュを行うことができる
+
+git push origin master プッシュのコマンド
+
+実際はgit push origin masterはほぼやらない。master以外のブランチにプッシュする。
+originっていうのはリモートリポジトリのことと覚えよう
+
+### クローン、プルリク、マージ
+・git clone コピーしたURL       クローン
+
+今はmasterなので新しいブランチを作って開発を進めていく
+git checkout -b add_hogehoge
+
+新しく作ったブランチで開発を進め、そのブランチをリモートリポジトリ（Github）にプッシュする
+git push origin add_hogehoge
+
+■もしリモートリポジトリの何の対象にプッシュすればいいかわからない場合は（この場合originが不明の場合）
+git remote
+でわかる
+
+・プッシュが成功するとGithub上にも反映されるので、プルリクをクリックし、追加した説明のコメントを記入し、プルリクをする
+上長にコードを確認してもらってオッケーが出たら、マージプルリクをクリック
+masterにマージ（合体）させたら、古いブランチは必要ないので削除
+
+・リモートからローカル（自分のPC）にコピーしたい
+git checkout master まずブランチをmasterにする
+
+git pull origin master originの（Githubの）masterブランチをローカルへ引っ張ってくる
