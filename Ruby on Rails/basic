@@ -1,4 +1,4 @@
-2019 4/26
+###2019 4/26
 ・bundle install をする階層は、homeでもdesktopでもダメ。処理を行いたいディレクトリで行わないとエラーが起こる。
 ・shift command 5 でスクリーンショット
 ・routes.rb で
@@ -18,3 +18,9 @@ erbはrubyのコードを打ち込むことのできるhtmlファイルである
 ・rails g controller users でコントローラを作成することは現場ではまずない。いらないファイルができまくるから
 ・appのcontroller上でファイル作成。users.controller.rbで作成し、classも自分で書く。
 ・ApplicationControllerからUsersControllerへ継承を忘れないこと
+
+###２０１９１２０８
+ブラウザ→ルーティング→コントローラ→ビュー→ブラウザ
+ビューはhogehoge.html.erbのこと
+<%   %>で定義づけ
+<%=  %>で表示　イコールがないと表示されないので注意
