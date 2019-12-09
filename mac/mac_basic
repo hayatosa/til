@@ -5,3 +5,15 @@
 コントロールaで文の最初、eで最後。pで上の行へ、nで下へ。kでその文字以降切り取り、yで貼り付け。fで次の文字、bで戻る。
 フルスクリーンにしたい　command+control+f
 最前面の画面以外を消したい　command+option+h
+
+Finderの使い方
+開く　command+↓
+閉じる(戻る)　command+↑
+ファイルの中身チラ見　スペースキー
+ファイルのプロパティ見たい　command+i
+フォルダ移動　command+[ or ]
+ファイルの削除　command+d
+フォルダ新規作成　command+shift+n
+Finderを別ウィンドウで開きたい　command+n
+Finder内に別のタブを作りたい　command+t
+ タブ移動　control+→ 
