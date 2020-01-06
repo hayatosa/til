@@ -24,3 +24,7 @@ erbはrubyのコードを打ち込むことのできるhtmlファイルである
 ビューはhogehoge.html.erbのこと
 <%   %>で定義づけ
 <%=  %>で表示　イコールがないと表示されないので注意
+
+index：一覧表示、new:新規作成画面表示、create:DBへ保存、show:詳細表示、edit:更新画面表示、update:DB更新、destroy:DBから削除
+index,new,show,editは画面を表示するだけ（DB絡まない）なのでアクションもシンプルになる、と覚えよう。
+DBへの作業が生じるcreate,updateはgetでなくpost.destroyはdelete.
