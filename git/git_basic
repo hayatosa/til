@@ -71,4 +71,6 @@ git checkout master まずブランチをmasterにする
 git pull origin master originの（Githubの）masterブランチをローカルへ引っ張ってくる
 
 ■変更したファイル名を確認したい git status
+git statusは他にも、addしたファイルが緑色、まだaddしていないファイルが赤色で表示される
 ■変更した内容を知りたい　git diff
+■git log -pで過去の変更内容見れる
