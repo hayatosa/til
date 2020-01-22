@@ -69,3 +69,6 @@ masterにマージ（合体）させたら、古いブランチは必要ない�
 git checkout master まずブランチをmasterにする
 
 git pull origin master originの（Githubの）masterブランチをローカルへ引っ張ってくる
+
+■変更したファイル名を確認したい git status
+■変更した内容を知りたい　git diff
