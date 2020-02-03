@@ -28,3 +28,12 @@ erbはrubyのコードを打ち込むことのできるhtmlファイルである
 index：一覧表示、new:新規作成画面表示、create:DBへ保存、show:詳細表示、edit:更新画面表示、update:DB更新、destroy:DBから削除
 index,new,show,editは画面を表示するだけ（DB絡まない）なのでアクションもシンプルになる、と覚えよう。
 DBへの作業が生じるcreate,updateはgetでなくpost.destroyはdelete.
+
+1ブラウザから「/users」というURLのリクエストをRailsサーバーに送信する。
+2「/users」リクエストは、Railsのルーティング機構 (ルーター) によってUsersコントローラ内のindexアクションに割り当てられる。
+3indexアクションが実行され、そこからUserモデルに、「すべてのユーザーを取り出せ」(User.all)と問い合わせる。
+4Userモデルは問い合わせを受け、すべてのユーザーをデータベースから取り出す。
+5データベースから取り出したユーザーの一覧をUserモデルからコントローラに返す。
+6Usersコントローラは、ユーザーの一覧を@users変数 (@はRubyのインスタンス変数を表す) に保存し、indexビューに渡す。
+7indexビューが起動し、ERB (Embedded RuBy: ビューのHTMLに埋め込まれているRubyコード) を実行して HTMLを生成 (レンダリング) する。
+8コントローラは、ビューで生成されたHTMLを受け取り、ブラウザに返す。
