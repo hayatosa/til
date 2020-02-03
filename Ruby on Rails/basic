@@ -37,3 +37,6 @@ DBへの作業が生じるcreate,updateはgetでなくpost.destroyはdelete.
 6Usersコントローラは、ユーザーの一覧を@users変数 (@はRubyのインスタンス変数を表す) に保存し、indexビューに渡す。
 7indexビューが起動し、ERB (Embedded RuBy: ビューのHTMLに埋め込まれているRubyコード) を実行して HTMLを生成 (レンダリング) する。
 8コントローラは、ビューで生成されたHTMLを受け取り、ブラウザに返す。
+
+indexアクションに@users = User.allという行があります。これによって、Userモデルからすべてのユーザーの一覧を取り出し、@usersという変数に保存します
+@記号で始まる変数をRubyではインスタンス変数と呼び、Railsのコントローラ内で宣言したインスタンス変数はビューでも使えるようになります。
