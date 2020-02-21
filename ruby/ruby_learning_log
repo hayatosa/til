@@ -1,1 +1,45 @@
+# セッターとは、インスタンス変数の値をクラス内で更新するためのメソッドです。そのセッターで、引数で受け取った値をインスタンス変数に代入します。
+# セッターはパラメータを設定するメソッドのこと
+
+class Brave
+  def name=(name)
+  @name = name
+  end
+end
+
+これをやることで
+brave = Brave.newした後(Braveクラスをインスタンス化した後)
+brave.name = “テリー”と、値を設定できるようになる。
+
+# ゲッターとは、クラス内にあるインスタンス変数の値を取得し、クラス外から参照できるようにするためのメソッドです。
+
+def dame
+ @name
+end
+
+# キーワード引数ってのはbrave = Brave.new(name: ”テリー”, hp: 500)とかの(name: ”テリー”, hp: 500)。
+nameはこの値、hpはこの値、とハッシュになってる。キーワード引数のおかげで、どの値がどのパラメータか、キーワードnameやhpがあるのですぐわかる！
+
+  # paramsで引数を一括で受け取る
+  # 引数に**を記述：ハッシュしか受け取れなくなる。無駄なエラー回避のため。
+  # 受け取るハッシュはnew演算子で定めた値　.new(name: "テリー", hp: 500, offense: 150, defense: 100）
+
+  def initialize(**params)
+    @name = params[:name]
+    @hp = params[:hp]
+    @offense = params[:offense]
+    @defense = params[:defense]
+  end
+
+# attr_readerの記述でゲッターを省略することができる
+attr_reader :name, :hp, :offense, :defense
+
+# セッターを省略する場合はattr_writerを使用します。
+attr_writer :hp
+
+attr_readerとattr_writerを同時に定義できるメソッドがattr_accessorです。こちらを使えば、attr_readerとattr_writerの記述を1行で表すことができます。
+
+書き換えられたら困るoffenseやdefenseはattr_readerのまま（読み取り専用）
+増減する値のhpをattr_accessorで定義 attr_accessor :hp
+
 
